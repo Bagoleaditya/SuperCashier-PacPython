@@ -26,10 +26,12 @@ def add_item(cart):
             item_qty = int(input("2. Add the quantity of the item: "))
             item_price = float(input("3. Add the price of the item: "))
             
-            if item_qty <= 0 or item_price < 0:
+
+            if item_qty <= 0 or item_price <= 0:
                 print("ERROR: Item quantity and price must be greater than 0!")
             else:
                 cart.loc[item_name] = [item_qty, item_price]
+                print("Your order has been added! \n")
                 
                 cont_input = input("Do you want to add anything else?(y/n) \n ").lower()
                 if cont_input == "y":
@@ -41,7 +43,7 @@ def add_item(cart):
 
             
         except ValueError:
-            print("ERROR: Please input the correct value or number!")
+            print(f"ERROR:Please input the correct value or number!")
 
 
 # Function to update item name
@@ -83,8 +85,36 @@ def delete_item(cart, item_name):
 # Function to empty cart
 def reset_cart(cart):
     cart.drop(cart.index, inplace=True)
+    print("Your cart is empty")
+    print("-"*30)
+    print("\n")
+
+
 
 # Function to calculate total per-items
-def display_item_prices_column(cart):
-    cart['total_price'] = cart['quantity'] * cart['price']
-    print(cart)
+def calculate_total_price(final_cart):
+    final_cart['total_price'] = final_cart['quantity'] * final_cart['price']
+    
+    return final_cart
+
+def discount(final_cart):
+    discounts = []
+    for index, row in final_cart.iterrows():
+        total_price = row['total_price']
+        if total_price > 500000:
+            discounts.append(7)
+        elif total_price > 300000:
+            discounts.append(6)
+        elif total_price > 200000:
+            discounts.append(5)
+        else:
+            discounts.append(0)
+    final_cart['disc'] = discounts
+
+    return final_cart
+    
+def calculate_discount_price(final_cart):
+    final_cart['disc_price'] = final_cart['total_price']*(1-(final_cart['disc']/100))
+
+    return final_cart
+

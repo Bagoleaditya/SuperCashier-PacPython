@@ -8,9 +8,11 @@ transaction_id = transaction()
 cart = pd.DataFrame(columns=['quantity', 'price'])
 pd.set_option('display.float_format', '{:.2f}'.format)
 
+
 while True:
     cashier_menu()
     menu = input("Please choose menu (1-7): \n")
+    print("\n")
     try:
         if menu == '1': 
             add_item(cart)
@@ -22,10 +24,10 @@ while True:
             while True:
                 display_cart(cart)
                 item_name = input("Which item you want to update? (type 'no' to cancel) \n").upper()
-                if item_name == 'no':
+                if item_name == 'NO':
                     break
                 elif item_name not in cart.index:
-                    print("Item not found, check your input")
+                    print("Item not found, check your input \n")
                     continue
                 else:
                     while True:
@@ -55,21 +57,42 @@ while True:
                         
                         display_cart(cart)
                         break
+        elif menu == '3':
+            display_cart(cart)
+            #print("Pick item you want to delete. \n")
+            while True:
+                item_name = input('Pick item you want to delete : \n').upper()
+                if item_name not in cart.index:
+                   print("Selected item didn't exist")
+                else:
+                    delete_item(cart,item_name)
+                    display_cart(cart)
+                    break
+        
+        elif menu == '4':
+            reset_cart(cart)
+            display_cart(cart)
+        
+        elif menu == '5':
+            display_cart(cart)
 
-
-
+        elif menu == '6':
+            #display_cart(cart)
+            final_cart = cart.copy()
+            print(final_cart)
 
             
+            calculate_total_price(final_cart)
+            discount(final_cart)
+            calculate_discount_price(final_cart)
+            
+            display_checkout_cart(final_cart)
         
-        # elif menu == '3':
-        #     delete_item(cart)
-        
-        # elif menu == '4':
-        #     reset_cart(cart)
 
-        # elif menu == '5':
-        #     display_item_prices_column(cart)
-        #     break
+ 
+
+            
+
 
 
     except Exception as e:
