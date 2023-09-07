@@ -1,37 +1,54 @@
 import pandas as pd
 import numpy as np
 from tabulate import tabulate
+from datetime import datetime
 
 # Initialize DataFrame
 cart = pd.DataFrame(columns=['quantity', 'price'])
 
 # Function to add transaction ID
 def transaction():
+    """
+    Create transaction_id variable from information that customer inputted.
+
+    Returns:
+        transaction_id variable
+    """
     while True:
         cust_name = str(input("Please input your name: \n")).upper()
         no_hp = str(input("Please input your phone number: \n"))
-        if len(no_hp)<7:
-            print("ERROR: Phone number must have at least 7 digits.")
+        if len(no_hp)<6:
+            print("ERROR: Phone number must have at least 6 digits.")
         else:
-            transaction_id = cust_name[:2] + no_hp[-6:]
+            current_time = datetime.now().strftime('%H%M%S')
+            transaction_id = no_hp[-4:]+current_time
             return transaction_id
 
 
 
 # Function to add items
 def add_item(cart):
+    """
+    Function to ask customer about item information 
+
+    Args:
+        cart : a DataFrame to store item information
+    
+    Returns:
+        a DataFrame filled by item information
+    """
     while True:
         try:
-            item_name = str(input("1. Add the item you want to purchase: ")).upper()
-            item_qty = int(input("2. Add the quantity of the item: "))
-            item_price = float(input("3. Add the price of the item: "))
+            item_name = str(input("1. Add the item you want to purchase: \n")).upper()
+            item_qty = int(input("2. Add the quantity of the item: \n"))
+            item_price = float(input("3. Add the price of the item: \n"))
             
 
             if item_qty <= 0 or item_price <= 0:
                 print("ERROR: Item quantity and price must be greater than 0!")
             else:
                 cart.loc[item_name] = [item_qty, item_price]
-                print("Your order has been added! \n")
+                print("Your order has been added! \n    ")
                 
                 cont_input = input("Do you want to add anything else?(y/n) \n ").lower()
                 if cont_input == "y":
@@ -48,6 +65,14 @@ def add_item(cart):
 
 # Function to update item name
 def update_item_name(cart, old_name, new_name):
+    """
+    Function to update item name
+
+    Args:
+        cart: a DataFrame to store item information
+        old_name: current item name 
+        new_name: new item name
+    """
     try:
         cart.rename(index={old_name: new_name}, inplace=True)
     except KeyError:

@@ -1,7 +1,9 @@
 from src.function import *
 from src.menu import *
+from src.db import insert_to_db
 
 transaction_id = transaction()
+print(transaction_id)
 
 #cashier_menu()
 
@@ -79,7 +81,6 @@ while True:
         elif menu == '6':
             #display_cart(cart)
             final_cart = cart.copy()
-            print(final_cart)
 
             
             calculate_total_price(final_cart)
@@ -87,13 +88,26 @@ while True:
             calculate_discount_price(final_cart)
             
             display_checkout_cart(final_cart)
+            final_cart.reset_index(inplace=True)
+            final_cart['transaction_id'] = transaction_id
+            print(final_cart)
+            #print(final_cart)
+
+            #insert cart order into database
+            insert_to_db(final_cart)
+
+        elif menu == '7':
+            print('-'*30)
+            print('='*30)
+            print("Thank you for shopping with Ojo Kendor Mart!")
+            print('='*30)
+            print('-'*30)
+            break
+        else:
+            raise ValueError("The Menu choice is not available. Please choose 1-7")
         
 
  
-
-            
-
-
 
     except Exception as e:
         print(f"ERROR: {e}")
