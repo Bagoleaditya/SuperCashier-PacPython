@@ -97,11 +97,11 @@ while True:
             insert_to_db(final_cart)
 
         elif menu == '7':
-            print('-'*30)
-            print('='*30)
+            print('-'*44)
+            print('='*44)
             print("Thank you for shopping with Ojo Kendor Mart!")
-            print('='*30)
-            print('-'*30)
+            print('='*44)
+            print('-'*44)
             break
         else:
             raise ValueError("The Menu choice is not available. Please choose 1-7")
