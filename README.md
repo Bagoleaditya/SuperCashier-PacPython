@@ -21,11 +21,11 @@ To fulfill Andi's request, here are the necessary requirements and objectives fo
 1. Users can initiate a new transaction.
 2. Users can add, update, or remove items from their cart, as well as empty the entire cart.
 3. Users can check the items included in their current transaction cart.
-4. The cashier program will apply item-specific discounts when the total of each item cost crosses certain thresholds.
-    A 7% discount will be applied if the total price exceeds Rp 500,000.
-    A 6% discount will be applied if the total price exceeds Rp 300,000.
-    A 5% discount will be applied if the total price exceeds Rp 200,000.
+4. The cashier program will apply item-specific discounts when the total of each item cost crosses certain thresholds:
+    - A 7% discount will be applied if the total price exceeds Rp 500,000.
+    - A 6% discount will be applied if the total price exceeds Rp 300,000.
+    - A 5% discount will be applied if the total price exceeds Rp 200,000.
 
-5. Users can finalize their transaction, which will then be stored in the database.
+6. Users can finalize their transaction, which will then be stored in the database.
 
 
