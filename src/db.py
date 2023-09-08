@@ -26,6 +26,14 @@ conn.execute(query)
 conn.close()    
 
 def insert_to_db(final_cart):
+    """
+    Function to insert item information in final_cart DataFrame to sqlite database
+
+    Args: 
+        final_cart : a final DataFrame before checkout
+    Returns
+        
+    """
     try:
         # Create SQLite database and connection
         engine = create_engine('sqlite:///db/cartOrder.db')

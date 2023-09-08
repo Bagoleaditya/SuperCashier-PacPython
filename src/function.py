@@ -69,9 +69,11 @@ def update_item_name(cart, old_name, new_name):
     Function to update item name
 
     Args:
-        cart: a DataFrame to store item information
+        cart: a DataFrame that stored item information
         old_name: current item name 
         new_name: new item name
+    Returns:
+        updated item name
     """
     try:
         cart.rename(index={old_name: new_name}, inplace=True)
@@ -81,6 +83,16 @@ def update_item_name(cart, old_name, new_name):
 
 # Function to update item quantity
 def update_item_qty(cart, item_name, new_qty):
+    """
+    Function to update item quantity
+
+    Args:
+        cart : a DataFrame that stored item information
+        item_name : the item name
+        new_qty = new item quantity
+    Returns:
+        updated item quantity
+    """
     try:
         if new_qty <= 0:
             print("ERROR: The new quantity must be greater than 0!")
@@ -92,6 +104,16 @@ def update_item_qty(cart, item_name, new_qty):
 
 # Function to update item price
 def update_item_price(cart, item_name, new_price):
+    """
+    Function to update item price
+
+    Args:
+        cart : a DataFrame that stored item information
+        item_name : the item name
+        new_price = new item quantity
+    Returns:
+        updated item price
+    """
     try:
         if new_price < 0:
             print("ERROR: The new price must be greater than 0!")
@@ -102,6 +124,16 @@ def update_item_price(cart, item_name, new_price):
 
 # Function to delete item 
 def delete_item(cart, item_name):
+    """
+    Function to delete stored item
+
+    Args:
+        cart : a DataFrame that stored item information
+        item_name : the item name that want to be deleted
+        
+    Returns:
+        updated cart
+    """
     try:
         cart.drop(item_name, inplace=True)
     except KeyError:
@@ -109,6 +141,13 @@ def delete_item(cart, item_name):
 
 # Function to empty cart
 def reset_cart(cart):
+    """
+    Function to empty the cart
+    Args:
+        cart : a DataFrame that stored item information
+    Returns:
+        an empty cart DataFrame
+    """
     cart.drop(cart.index, inplace=True)
     print("Your cart is empty")
     print("-"*30)
@@ -118,11 +157,27 @@ def reset_cart(cart):
 
 # Function to calculate total per-items
 def calculate_total_price(final_cart):
+    """
+    This function to calculate item's total price
+
+    Args:
+        final_cart = a final DataFrame before checkout
+    Returns:
+        a DataFrame contain new column : total_price
+    """
     final_cart['total_price'] = final_cart['quantity'] * final_cart['price']
     
     return final_cart
 
 def discount(final_cart):
+    """
+    Function to calculate discount based on each item total price
+
+    Args:
+        final_cart = a final DataFrame before checkout
+    Returns:
+        a DataFrame contain new column : disc
+    """
     discounts = []
     for index, row in final_cart.iterrows():
         total_price = row['total_price']
@@ -139,6 +194,14 @@ def discount(final_cart):
     return final_cart
     
 def calculate_discount_price(final_cart):
+    """
+    Function to calculate discount based on each item total price
+
+    Args:
+        final_cart = a final DataFrame before checkout
+    Returns:
+        a DataFrame contain new column : disc
+    """
     final_cart['disc_price'] = final_cart['total_price']*(1-(final_cart['disc']/100))
 
     return final_cart
