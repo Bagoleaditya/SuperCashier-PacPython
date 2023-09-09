@@ -62,7 +62,6 @@ def insert_to_db(final_cart):
                           'discount':discount,
                           'discounted_price':discounted_price})
 
-        print("Transaction has been inserted into database")
 
     except Exception as e:
         print(f"ERROR: {e}")

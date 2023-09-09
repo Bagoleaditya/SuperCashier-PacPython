@@ -12,7 +12,7 @@ To fulfill Andi's request, here are the necessary requirements and objectives fo
 
 ### Technical Requirements
 1. This program will be developed in Python Language
-2. Using OOP and modular code based programming
+2. Using modular code based programming
 3. Apply Clean Code Principle (PEP8)
 4. Add docstring for each function to simplify future updates and improve readability
 5. Stored the order cart to SQLite db using SQLAlchemy
@@ -30,10 +30,10 @@ To fulfill Andi's request, here are the necessary requirements and objectives fo
 
 ## Flowchart
 
-![Alt text](<cashier chartflow-1.png>)
+![this is cashier chartflow](<cashier chartflow.png>)
 
 ## How to use SuperCashier
-'''python
+```python
 
 # install requirements
 pip install requirements.txt
@@ -42,8 +42,36 @@ pip install requirements.txt
 python main.py
 
 # data will be stored in /db 
-'''
+```
 
-## Test case scenario
+# Test case scenario
 
-###
+## Create TransactionID 
+![TransactionID](<Create Transaction ID.png>)
+
+## Add item
+![Add item](<Add Item.png>)
+
+## Update item
+![Update item](<Update Item.png>)
+
+## Delete item
+![Delete item](<Delete Item.png>)
+
+## Reset Cart
+![Reset cart](<Reset Cart.png>)
+
+## Check order
+![Check order](<Check Order.png>)
+
+## Checkout
+![checkout](Checkout.png)
+
+## Exit
+![exit](exit.png)
+
+# Conclusion
+
+1. This Cashier program already meets the fundamental requirements set by Andi. 
+2. User feedback is needed to develop more advanced features. 
+3. Review by more experienced programmers for script optimization.

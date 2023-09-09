@@ -32,7 +32,7 @@ def display_cart(cart):
         table display of item in the cart
 
     """
-    print("\n")
+    
     print("Your Cart Order: \n")
     print(tabulate(cart, headers=["Item", "Quantity", "Price"],floatfmt=[".0f",".0f",".2f"]))
     print("\n")
