@@ -39,9 +39,9 @@ def add_item(cart):
     """
     while True:
         try:
-            item_name = str(input("1. Add the item you want to purchase: \n")).upper()
-            item_qty = int(input("2. Add the quantity of the item: \n"))
-            item_price = float(input("3. Add the price of the item: \n"))
+            item_name = str(input("1. Add the item you want to purchase: ")).upper()
+            item_qty = int(input("2. Add the quantity of the item: "))
+            item_price = float(input("3. Add the price of the item: "))
             
 
             if item_qty <= 0 or item_price <= 0:

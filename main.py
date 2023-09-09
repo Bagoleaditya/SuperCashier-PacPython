@@ -3,7 +3,7 @@ from src.menu import *
 from src.db import insert_to_db
 
 transaction_id = transaction()
-print(transaction_id)
+print(f"Your ID transacation is : {transaction_id}")
 
 #cashier_menu()
 
@@ -22,7 +22,6 @@ while True:
             
             
         elif menu == '2':
-            cashier_menu()
             while True:
                 display_cart(cart)
                 item_name = input("Which item you want to update? (type 'no' to cancel) \n").upper()
@@ -33,9 +32,9 @@ while True:
                     continue
                 else:
                     while True:
-                        new_name = input("1. Please input new item name: \n").upper()
-                        new_qty = input("2. Please input new quantity: \n")
-                        new_price = input("3. Please input new price: \n")
+                        new_name = input("1. Please input new item name: ").upper()
+                        new_qty = input("2. Please input new quantity: ")
+                        new_price = input("3. Please input new price: ")
 
                         update_item_name(cart,item_name,new_name)
 
@@ -63,7 +62,7 @@ while True:
             display_cart(cart)
             #print("Pick item you want to delete. \n")
             while True:
-                item_name = input('Pick item you want to delete : \n').upper()
+                item_name = input('Pick item you want to delete : ').upper()
                 if item_name not in cart.index:
                    print("Selected item didn't exist")
                 else:

@@ -28,4 +28,22 @@ To fulfill Andi's request, here are the necessary requirements and objectives fo
 
 5. Users can finalize their transaction, which will then be stored in the database.
 
+## Flowchart
 
+![Alt text](<cashier chartflow-1.png>)
+
+## How to use SuperCashier
+'''python
+
+# install requirements
+pip install requirements.txt
+
+# run the program
+python main.py
+
+# data will be stored in /db 
+'''
+
+## Test case scenario
+
+###

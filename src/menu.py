@@ -9,7 +9,7 @@ def cashier_menu():
     Function to show menu option
     """
     print("-"*30)
-    print("Ojo Kendor Menu: ")
+    print("Ojo Kendor Cashier Menu: ")
     print("-"*30)
     print("1. Add item to cart")
     print("2. Update item from cart")
@@ -32,10 +32,10 @@ def display_cart(cart):
         table display of item in the cart
 
     """
-    #cart['total'] = cart['quantity']*cart['price']
-   
+    print("\n")
     print("Your Cart Order: \n")
     print(tabulate(cart, headers=["Item", "Quantity", "Price"],floatfmt=[".0f",".0f",".2f"]))
+    print("\n")
 
 def display_checkout_cart(final_cart):
     """
