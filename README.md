@@ -47,28 +47,28 @@ python main.py
 # Test case scenario
 
 ## Create TransactionID 
-![TransactionID](<Create Transaction ID.png>)
+![TransactionID](<testCase/Create Transaction ID.png>)
 
 ## Add item
-![Add item](<Add Item.png>)
+![Add item](<testCase/Add Item.png>)
 
 ## Update item
-![Update item](<Update Item.png>)
+![Update item](<testCase/Update Item.png>)
 
 ## Delete item
-![Delete item](<Delete Item.png>)
+![Delete item](<testCase/Delete Item.png>)
 
 ## Reset Cart
-![Reset cart](<Reset Cart.png>)
+![Reset cart](<testCase/Reset Cart.png>)
 
 ## Check order
-![Check order](<Check Order.png>)
+![Check order](<testCase/Check Order.png>)
 
 ## Checkout
-![checkout](Checkout.png)
+![checkout](testCase/Checkout.png)
 
 ## Exit
-![exit](exit.png)
+![exit](testCase/exit.png)
 
 # Conclusion
 
