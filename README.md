@@ -35,9 +35,6 @@ To fulfill Andi's request, here are the necessary requirements and objectives fo
 ## How to use SuperCashier
 ```python
 
-# install requirements
-pip install requirements.txt
-
 # run the program
 python main.py
 
