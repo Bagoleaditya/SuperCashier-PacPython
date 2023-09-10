@@ -3,8 +3,8 @@
 ## A. Problem Background
 
 Andi is an owner of one of the largest supermarket in the city, "Ojo Kendor Mart". Andi has a plan to improve his business by implementing a self-service cashier system, in the hopes of : 
-    1. Customer can directly input items, quantity, and price to the cart
-    2. Customer who are not in that city, can also shop from Ojo Kendor Mart.  
+1. Customer can directly input items, quantity, and price to the cart
+2. Customer who are not in that city, can also shop from Ojo Kendor Mart.  
 
 ## B. Requirements and objectives
 
